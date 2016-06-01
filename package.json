@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-mapillary",
   "version": "0.1.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "An ember addon for Mapillary JS https://mapillary.github.io/mapillary-js/",
   "directories": {
     "doc": "doc",
     "test": "tests"

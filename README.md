@@ -1,5 +1,7 @@
 # Ember-cli-mapillary
 
+An ember addon for [Mapillary JS]( https://mapillary.github.io/mapillary-js/)
+
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
