@@ -1,0 +1,1 @@
+export { default } from 'ember-cli-mapillary/components/mapillary-viewer/component';

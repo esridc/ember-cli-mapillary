@@ -1,0 +1,11 @@
+.mly-wrapper {
+  position: relative;
+  background-color: grey;
+  width: 640px;
+  height: 480px;
+}
+.mapillary-viewer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
