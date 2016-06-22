@@ -12,5 +12,10 @@ export default Ember.Component.extend({
   // initialize the viewer once this component has been inserted in the dom
   didInsertElement() {
     this.mly = new Mapillary.Viewer(this.elementId, this.clientId, this.key, this.options);
+
+    // raise an action whenever the node changes
+    this.mly.on('nodechanged', (node) => {
+      this.sendAction('onNodeChanged', node);
+    });
   }
 });

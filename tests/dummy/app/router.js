@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('simple');
+  this.route('leaflet');
 });
 
 export default Router;

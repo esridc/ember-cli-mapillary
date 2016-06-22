@@ -1,0 +1,8 @@
+<div class="mly-wrapper leaflet-example">
+  {{!-- NOTE: clientId is defined in config/environment.js --}}
+  {{mapillary-viewer clientId=clientId key="zarcRdNFZwg3FkXNcsFeGw" onNodeChanged=(action 'onViewerUpdate') }}
+  {{#leaflet-map lat=lat lng=lon zoom=zoom onLoad=(action 'onMapLoad')}}
+    {{tile-layer url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"}}
+    {{marker-layer location=latLon}}
+  {{/leaflet-map}}
+</div>
