@@ -1100,7 +1100,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"mapillaryClientId":"cjJ1SUtVOEMtdy11b21JM0tyYTZIQTo2ZmVjNTQ3YWQ0OWI2Yjgx","name":"ember-cli-mapillary","version":"0.3.0+42c561ad"});
+  require("dummy/app")["default"].create({"mapillaryClientId":"cjJ1SUtVOEMtdy11b21JM0tyYTZIQTo2ZmVjNTQ3YWQ0OWI2Yjgx","name":"ember-cli-mapillary","version":"0.4.0+555f4d66"});
 }
 
 /* jshint ignore:end */
