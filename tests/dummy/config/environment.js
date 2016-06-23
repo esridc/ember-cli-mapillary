@@ -16,7 +16,18 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      mapillaryClientId: 'cjJ1SUtVOEMtdy11b21JM0tyYTZIQTo2ZmVjNTQ3YWQ0OWI2Yjgx'
+      mapillaryClientId: 'cjJ1SUtVOEMtdy11b21JM0tyYTZIQTo2ZmVjNTQ3YWQ0OWI2Yjgx',
+      mapillaryVectorLayerConfig: {
+        url: 'https://d2munx5tg0hw47.cloudfront.net/tiles/{z}/{x}/{y}.mapbox',
+        maxZoom: 18,
+        style: function (/*feature*/) {
+          var style = {};
+          style.color = 'rgba(0, 255, 0, 0.7)';
+          style.size = 3;
+
+          return style;
+        }
+      }
     }
   };
 

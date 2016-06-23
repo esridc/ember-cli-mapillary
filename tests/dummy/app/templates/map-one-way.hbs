@@ -1,0 +1,13 @@
+<h3>Map (One Way)</h3>
+<p>Navigating through the viewer will update the map location.</p>
+<div class="panel panel-left">
+  {{mapillary-viewer clientId=clientId key="zarcRdNFZwg3FkXNcsFeGw" onNodeChanged=(action 'onViewerUpdate') }}
+</div>
+<div class="panel panel-left">
+  {{#leaflet-map lat=lat lng=lon zoom=zoom onLoad=(action 'onMapLoad')}}
+    {{tile-layer url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"}}
+    {{marker-layer location=latLon}}
+  {{/leaflet-map}}
+</div>
+<p class="clear-both">This example shows one-way interaction betwen the Mapillary viewer component and a <a href="http://www.ember-leaflet.com/">Leaflet map component</a>.
+  The map shows Mapillary coverage over an <a href="https://www.openstreetmap.org">OpenStreetMap</a> basemap.</p>

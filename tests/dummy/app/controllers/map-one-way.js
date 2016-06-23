@@ -2,6 +2,7 @@
 
 import Ember from 'ember';
 import config from '../config/environment';
+import getMapillaryLayerConfig from '../utils/get-mapillary-layer-config';
 
 export default Ember.Controller.extend({
   // get client id from config
@@ -20,17 +21,7 @@ export default Ember.Controller.extend({
     // when map loads, add vector tile mapillary coverage layer
     onMapLoad(e) {
       var map = e.target;
-      var mlyVectorLayerConfig = {
-        url: 'https://d2munx5tg0hw47.cloudfront.net/tiles/{z}/{x}/{y}.mapbox',
-        maxZoom: 18,
-        style: function (/*feature*/) {
-          var style = {};
-          style.color = 'rgba(0, 255, 0, 0.7)';
-          style.size = 3;
-
-          return style;
-        }
-      };
+      var mlyVectorLayerConfig = getMapillaryLayerConfig();
       var mvtSource = new L.TileLayer.MVTSource(mlyVectorLayerConfig);
       map.addLayer(mvtSource);
     },
