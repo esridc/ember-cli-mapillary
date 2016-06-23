@@ -1,0 +1,33 @@
+.mly-wrapper {
+  position: relative;
+  background-color: grey;
+  width: 640px;
+  height: 480px;
+}
+.mapillary-viewer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 400px;
+}
+
+.panel {
+  width: 50%;
+  height: 400px;
+}
+
+.panel-left {
+  float: left;
+}
+
+.panel-right {
+  float: right;
+}
+
+.clear-both {
+  clear: both;
+}
