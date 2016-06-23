@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+### Support
+- redirect index route to simple example
+- prevent HTTP (only) requests caused by `detect: true`
+- added script to deploy to gh-pages
+
 ## 0.3.0
 ### Added
 - listen for changes to lat/lng and update viewer location

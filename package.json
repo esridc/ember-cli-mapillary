@@ -9,7 +9,8 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember try:testall"
+    "test": "ember try:testall",
+    "deploy": "./scripts/deploy-gh.sh"
   },
   "repository": {
     "type": "git",

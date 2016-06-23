@@ -10,8 +10,7 @@ export default Ember.Controller.extend({
 
   // mapillary viewer configuration
   mapillaryOptions: {
-    cover: false,
-    detection: true
+    cover: false
   },
 
   // map center and zoom
