@@ -200,8 +200,7 @@ define('dummy/controllers/map-two-way', ['exports', 'ember', 'dummy/config/envir
 
     // mapillary viewer configuration
     mapillaryOptions: {
-      cover: false,
-      detection: true
+      cover: false
     },
 
     // map center and zoom
@@ -502,6 +501,13 @@ define('dummy/router', ['exports', 'ember', 'dummy/config/environment'], functio
   });
 
   exports['default'] = Router;
+});
+define('dummy/routes/index', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Route.extend({
+    beforeModel: function beforeModel() {
+      this.transitionTo('simple');
+    }
+  });
 });
 define('dummy/routes/map-one-way', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({});
@@ -1094,7 +1100,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"mapillaryClientId":"cjJ1SUtVOEMtdy11b21JM0tyYTZIQTo2ZmVjNTQ3YWQ0OWI2Yjgx","name":"ember-cli-mapillary","version":"v0.3.0"});
+  require("dummy/app")["default"].create({"mapillaryClientId":"cjJ1SUtVOEMtdy11b21JM0tyYTZIQTo2ZmVjNTQ3YWQ0OWI2Yjgx","name":"ember-cli-mapillary","version":"0.3.0+d8c43168"});
 }
 
 /* jshint ignore:end */
