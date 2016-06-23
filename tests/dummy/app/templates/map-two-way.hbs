@@ -1,0 +1,11 @@
+<h3>Map (Two Way)</h3>
+<p>Click on the map and the viewer will navigate to the closest location where there is Mapillary coverage. Navigating through the viewer will also update the map location.</p>
+<div class="panel panel-left">
+  {{mapillary-viewer clientId=clientId key="3wkiRZ35UU-ZiqXrkMw8DA" options=mapillaryOptions onNodeChanged=(action 'onViewerUpdate') latLng=moveToLatLng }}
+</div>
+<div class="panel panel-left">
+  {{#leaflet-map lat=lat lng=lon zoom=zoom onLoad=(action 'onMapLoad') onClick=(action 'onMapClick')}}
+    {{marker-layer location=latLon}}
+  {{/leaflet-map}}
+</div>
+<p class="clear-both">This example shows two-way interaction betwen the Mapillary viewer component and a <a href="http://www.ember-leaflet.com/">Leaflet map component</a>. The map shows Mapillary coverage over an <a href="http://www.esri.com/">Esri</a> basemap.</p>

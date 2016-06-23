@@ -14,3 +14,20 @@
   width: 100%;
   height: 400px;
 }
+
+.panel {
+  width: 50%;
+  height: 400px;
+}
+
+.panel-left {
+  float: left;
+}
+
+.panel-right {
+  float: right;
+}
+
+.clear-both {
+  clear: both;
+}
