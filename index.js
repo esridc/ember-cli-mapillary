@@ -11,11 +11,17 @@ module.exports = {
 
   // include mapillary-js in vendor folder
   treeForVendor: function(tree) {
+
     var packageTree = new Funnel(this.treeGenerator(packagePath), {
       srcDir: '/',
       destDir: 'mapillary-js'
     });
-    return mergeTrees([tree, packageTree]);
+
+    if (tree) {
+      return mergeTrees([tree, packageTree]);
+    } else {
+      return packageTree;
+    }
   },
 
   // include mapillary-js assets
