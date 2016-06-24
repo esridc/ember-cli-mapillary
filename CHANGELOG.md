@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.4.1
+### Changed
+- move broccoli build tools to dependencies
+
 ## 0.4.0
 ### Changed
 - update to mapillary-js 1.4
