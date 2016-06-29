@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - deprecate latLng property in favor of moveTo property
 ### Changed
 - don't move to node until after render and calling resize()
+- get Mapillary JS/CSS from CDN instead of including in vendor files 
 
 ## 0.4.2
 ### Changed
