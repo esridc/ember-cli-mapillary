@@ -1,7 +1,7 @@
 <h3>Map (Two Way)</h3>
 <p>Click on the map and the viewer will navigate to the closest location where there is Mapillary coverage. Navigating through the viewer will also update the map location.</p>
 <div class="panel panel-left">
-  {{mapillary-viewer clientId=clientId key="3wkiRZ35UU-ZiqXrkMw8DA" options=mapillaryOptions onNodeChanged=(action 'onViewerUpdate') latLng=moveToLatLng }}
+  {{mapillary-viewer clientId=clientId key="3wkiRZ35UU-ZiqXrkMw8DA" options=mapillaryOptions onNodeChanged=(action 'onViewerUpdate') moveTo=moveToLatLng }}
 </div>
 <div class="panel panel-left">
   {{#leaflet-map lat=lat lng=lon zoom=zoom onLoad=(action 'onMapLoad') onClick=(action 'onMapClick')}}

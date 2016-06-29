@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+### Added
+- raise an action (onLoadingChanged) whenever the loading state changes
+- new moveTo property can be used to move to a node by key or location
+- deprecate latLng property in favor of moveTo property
+### Changed
+- don't move to node until after render and calling resize()
+
 ## 0.4.2
 ### Changed
 - handle case when there's no vendor tree
