@@ -979,7 +979,7 @@ define("dummy/templates/map-two-way", ["exports"], function (exports) {
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [6]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "mapillary-viewer", [], ["clientId", ["subexpr", "@mut", [["get", "clientId", ["loc", [null, [4, 30], [4, 38]]]]], [], []], "key", "3wkiRZ35UU-ZiqXrkMw8DA", "options", ["subexpr", "@mut", [["get", "mapillaryOptions", ["loc", [null, [4, 76], [4, 92]]]]], [], []], "onNodeChanged", ["subexpr", "action", ["onViewerUpdate"], [], ["loc", [null, [4, 107], [4, 132]]]], "latLng", ["subexpr", "@mut", [["get", "moveToLatLng", ["loc", [null, [4, 140], [4, 152]]]]], [], []]], ["loc", [null, [4, 2], [4, 155]]]], ["block", "leaflet-map", [], ["lat", ["subexpr", "@mut", [["get", "lat", ["loc", [null, [7, 21], [7, 24]]]]], [], []], "lng", ["subexpr", "@mut", [["get", "lon", ["loc", [null, [7, 29], [7, 32]]]]], [], []], "zoom", ["subexpr", "@mut", [["get", "zoom", ["loc", [null, [7, 38], [7, 42]]]]], [], []], "onLoad", ["subexpr", "action", ["onMapLoad"], [], ["loc", [null, [7, 50], [7, 70]]]], "onClick", ["subexpr", "action", ["onMapClick"], [], ["loc", [null, [7, 79], [7, 100]]]]], 0, null, ["loc", [null, [7, 2], [9, 18]]]]],
+      statements: [["inline", "mapillary-viewer", [], ["clientId", ["subexpr", "@mut", [["get", "clientId", ["loc", [null, [4, 30], [4, 38]]]]], [], []], "key", "3wkiRZ35UU-ZiqXrkMw8DA", "options", ["subexpr", "@mut", [["get", "mapillaryOptions", ["loc", [null, [4, 76], [4, 92]]]]], [], []], "onNodeChanged", ["subexpr", "action", ["onViewerUpdate"], [], ["loc", [null, [4, 107], [4, 132]]]], "moveTo", ["subexpr", "@mut", [["get", "moveToLatLng", ["loc", [null, [4, 140], [4, 152]]]]], [], []]], ["loc", [null, [4, 2], [4, 155]]]], ["block", "leaflet-map", [], ["lat", ["subexpr", "@mut", [["get", "lat", ["loc", [null, [7, 21], [7, 24]]]]], [], []], "lng", ["subexpr", "@mut", [["get", "lon", ["loc", [null, [7, 29], [7, 32]]]]], [], []], "zoom", ["subexpr", "@mut", [["get", "zoom", ["loc", [null, [7, 38], [7, 42]]]]], [], []], "onLoad", ["subexpr", "action", ["onMapLoad"], [], ["loc", [null, [7, 50], [7, 70]]]], "onClick", ["subexpr", "action", ["onMapClick"], [], ["loc", [null, [7, 79], [7, 100]]]]], 0, null, ["loc", [null, [7, 2], [9, 18]]]]],
       locals: [],
       templates: [child0]
     };
@@ -1100,7 +1100,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"mapillaryClientId":"cjJ1SUtVOEMtdy11b21JM0tyYTZIQTo2ZmVjNTQ3YWQ0OWI2Yjgx","name":"ember-cli-mapillary","version":"0.4.0+555f4d66"});
+  require("dummy/app")["default"].create({"mapillaryClientId":"cjJ1SUtVOEMtdy11b21JM0tyYTZIQTo2ZmVjNTQ3YWQ0OWI2Yjgx","name":"ember-cli-mapillary","version":"0.5.0+c0d322b3"});
 }
 
 /* jshint ignore:end */
