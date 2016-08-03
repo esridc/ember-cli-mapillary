@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.5.1
 ### Changed
 - use correct Mapillary API method move to key (moveToKey, not moveCloseKey)
+- update to MapillaryJS v1.4.2
 ### Support
 - add GitHub and MapillaryJS links to dummy app
 - add example of how to use move to key in dummy app
