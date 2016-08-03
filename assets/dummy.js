@@ -239,6 +239,27 @@ define('dummy/controllers/map-two-way', ['exports', 'ember', 'dummy/config/envir
   });
 });
 /* globals L:false */
+define('dummy/controllers/move-to-key', ['exports', 'ember', 'dummy/config/environment'], function (exports, _ember, _dummyConfigEnvironment) {
+  exports['default'] = _ember['default'].Controller.extend({
+    // get client id from config
+    clientId: _dummyConfigEnvironment['default'].APP.mapillaryClientId,
+    startKey: 'ytfE1_iD_N-jmHfTHkj1Ug',
+    moveToKey: undefined,
+    isResetDisabled: true,
+    actions: {
+      resetViewer: function resetViewer() {
+        this.set('moveToKey', this.get('startKey'));
+      },
+      nodeDidChange: function nodeDidChange() {
+        // allow reset
+        this.set('isResetDisabled', false);
+        // clear the previous move to key (if any)
+        // to allow the user to reset the view again
+        this.set('moveToKey', null);
+      }
+    }
+  });
+});
 define('dummy/controllers/simple', ['exports', 'ember', 'dummy/config/environment'], function (exports, _ember, _dummyConfigEnvironment) {
   exports['default'] = _ember['default'].Controller.extend({
     // get client id from config
@@ -498,6 +519,7 @@ define('dummy/router', ['exports', 'ember', 'dummy/config/environment'], functio
     this.route('simple');
     this.route('map-two-way');
     this.route('map-one-way');
+    this.route('move-to-key');
   });
 
   exports['default'] = Router;
@@ -513,6 +535,9 @@ define('dummy/routes/map-one-way', ['exports', 'ember'], function (exports, _emb
   exports['default'] = _ember['default'].Route.extend({});
 });
 define('dummy/routes/map-two-way', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Route.extend({});
+});
+define('dummy/routes/move-to-key', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({});
 });
 define('dummy/routes/simple', ['exports', 'ember'], function (exports, _ember) {
@@ -636,6 +661,42 @@ define("dummy/templates/application", ["exports"], function (exports) {
         templates: []
       };
     })();
+    var child3 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.5.1",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 5,
+              "column": 3
+            },
+            "end": {
+              "line": 5,
+              "column": 45
+            }
+          },
+          "moduleName": "dummy/templates/application.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("Move to Key (ID)");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes() {
+          return [];
+        },
+        statements: [],
+        locals: [],
+        templates: []
+      };
+    })();
     return {
       meta: {
         "fragmentReason": {
@@ -650,7 +711,7 @@ define("dummy/templates/application", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 6,
+            "line": 11,
             "column": 0
           }
         },
@@ -664,13 +725,17 @@ define("dummy/templates/application", ["exports"], function (exports) {
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createElement("h2");
         dom.setAttribute(el1, "id", "title");
-        var el2 = dom.createTextNode("Mapillary for Ember");
+        var el2 = dom.createTextNode("Mapillary for Ember (ember-cli-mapillary)");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
         var el1 = dom.createElement("p");
         var el2 = dom.createTextNode("Examples: ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n | ");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
@@ -689,20 +754,41 @@ define("dummy/templates/application", ["exports"], function (exports) {
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
+        var el1 = dom.createElement("p");
+        var el2 = dom.createTextNode("\n  Resources: ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("a");
+        dom.setAttribute(el2, "href", "https://github.com/esridc/ember-cli-mapillary");
+        var el3 = dom.createTextNode("GitHub");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n    ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("a");
+        dom.setAttribute(el2, "href", "https://mapillary.github.io/mapillary-js/");
+        var el3 = dom.createTextNode("MapillaryJS");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var element0 = dom.childAt(fragment, [2]);
-        var morphs = new Array(4);
+        var morphs = new Array(5);
         morphs[0] = dom.createMorphAt(element0, 1, 1);
         morphs[1] = dom.createMorphAt(element0, 3, 3);
         morphs[2] = dom.createMorphAt(element0, 5, 5);
-        morphs[3] = dom.createMorphAt(fragment, 4, 4, contextualElement);
+        morphs[3] = dom.createMorphAt(element0, 7, 7);
+        morphs[4] = dom.createMorphAt(fragment, 4, 4, contextualElement);
         return morphs;
       },
-      statements: [["block", "link-to", ["simple"], [], 0, null, ["loc", [null, [2, 13], [2, 52]]]], ["block", "link-to", ["map-one-way"], [], 1, null, ["loc", [null, [3, 3], [3, 54]]]], ["block", "link-to", ["map-two-way"], [], 2, null, ["loc", [null, [4, 3], [4, 54]]]], ["content", "outlet", ["loc", [null, [5, 0], [5, 10]]]]],
+      statements: [["block", "link-to", ["simple"], [], 0, null, ["loc", [null, [2, 13], [2, 52]]]], ["block", "link-to", ["map-one-way"], [], 1, null, ["loc", [null, [3, 3], [3, 54]]]], ["block", "link-to", ["map-two-way"], [], 2, null, ["loc", [null, [4, 3], [4, 54]]]], ["block", "link-to", ["move-to-key"], [], 3, null, ["loc", [null, [5, 3], [5, 57]]]], ["content", "outlet", ["loc", [null, [6, 0], [6, 10]]]]],
       locals: [],
-      templates: [child0, child1, child2]
+      templates: [child0, child1, child2, child3]
     };
   })());
 });
@@ -985,6 +1071,93 @@ define("dummy/templates/map-two-way", ["exports"], function (exports) {
     };
   })());
 });
+define("dummy/templates/move-to-key", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    return {
+      meta: {
+        "fragmentReason": {
+          "name": "missing-wrapper",
+          "problems": ["multiple-nodes"]
+        },
+        "revision": "Ember@2.5.1",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 10,
+            "column": 0
+          }
+        },
+        "moduleName": "dummy/templates/move-to-key.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createElement("h3");
+        var el2 = dom.createTextNode("Move to Key");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("p");
+        var el2 = dom.createTextNode("Click on the viewer to begin navigating through the area. To go back to the start, click the ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("strong");
+        var el3 = dom.createTextNode("Reset");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode(" button below.");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "class", "mly-wrapper");
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("p");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("button");
+        var el3 = dom.createTextNode("Reset");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var element0 = dom.childAt(fragment, [6, 1]);
+        var morphs = new Array(3);
+        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [4]), 2, 2);
+        morphs[1] = dom.createAttrMorph(element0, 'onclick');
+        morphs[2] = dom.createAttrMorph(element0, 'disabled');
+        return morphs;
+      },
+      statements: [["inline", "mapillary-viewer", [], ["clientId", ["subexpr", "@mut", [["get", "clientId", ["loc", [null, [5, 30], [5, 38]]]]], [], []], "key", ["subexpr", "@mut", [["get", "startKey", ["loc", [null, [5, 43], [5, 51]]]]], [], []], "moveTo", ["subexpr", "@mut", [["get", "moveToKey", ["loc", [null, [5, 59], [5, 68]]]]], [], []], "onNodeChanged", ["subexpr", "action", ["nodeDidChange"], [], ["loc", [null, [5, 83], [5, 107]]]]], ["loc", [null, [5, 2], [5, 110]]]], ["attribute", "onclick", ["subexpr", "action", ["resetViewer"], [], ["loc", [null, [8, 18], [8, 42]]]]], ["attribute", "disabled", ["get", "isResetDisabled", ["loc", [null, [8, 54], [8, 69]]]]]],
+      locals: [],
+      templates: []
+    };
+  })());
+});
 define("dummy/templates/simple", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
     return {
@@ -1100,7 +1273,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"mapillaryClientId":"cjJ1SUtVOEMtdy11b21JM0tyYTZIQTo2ZmVjNTQ3YWQ0OWI2Yjgx","name":"ember-cli-mapillary","version":"0.5.0+c0d322b3"});
+  require("dummy/app")["default"].create({"mapillaryClientId":"cjJ1SUtVOEMtdy11b21JM0tyYTZIQTo2ZmVjNTQ3YWQ0OWI2Yjgx","name":"ember-cli-mapillary","version":"0.5.1+27418b05"});
 }
 
 /* jshint ignore:end */

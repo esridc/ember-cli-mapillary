@@ -25,6 +25,15 @@ define('dummy/tests/controllers/map-two-way.jshint', ['exports'], function (expo
     assert.ok(true, 'controllers/map-two-way.js should pass jshint.');
   });
 });
+define('dummy/tests/controllers/move-to-key.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | controllers/move-to-key.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/move-to-key.js should pass jshint.');
+  });
+});
 define('dummy/tests/controllers/simple.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -321,6 +330,15 @@ define('dummy/tests/routes/map-two-way.jshint', ['exports'], function (exports) 
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/map-two-way.js should pass jshint.');
+  });
+});
+define('dummy/tests/routes/move-to-key.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | routes/move-to-key.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/move-to-key.js should pass jshint.');
   });
 });
 define('dummy/tests/routes/simple.jshint', ['exports'], function (exports) {

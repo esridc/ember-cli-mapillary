@@ -76618,7 +76618,7 @@ define('ember-cli-mapillary/components/mapillary-viewer/component', ['exports', 
         return this.viewer.moveCloseTo(val[0], val[1]);
       } else {
         // move to key
-        return this.viewer.moveCloseKey(val);
+        return this.viewer.moveToKey(val);
       }
     },
 
