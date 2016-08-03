@@ -54,10 +54,10 @@ module.exports = {
   // TODO: once resolved, remove the following code
   contentFor: function(type/*, config*/) {
     if (type === 'head') {
-      return '<link rel="stylesheet" href="//npmcdn.com/mapillary-js@1.4.1/dist/mapillary-js.min.css">';
+      return '<link rel="stylesheet" href="//npmcdn.com/mapillary-js@1.4.2/dist/mapillary-js.min.css">';
     }
     if (type === 'body') {
-      return '<script src="//npmcdn.com/mapillary-js@1.4.1/dist/mapillary-js.min.js"></script>';
+      return '<script src="//npmcdn.com/mapillary-js@1.4.2/dist/mapillary-js.min.js"></script>';
     }
   }
 };
