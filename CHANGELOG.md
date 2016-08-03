@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.5.1
+### Changed
+- use correct Mapillary API method move to key (moveToKey, not moveCloseKey)
+### Support
+- add GitHub and MapillaryJS links to dummy app
+- add example of how to use move to key in dummy app
+
 ## 0.5.0
 ### Added
 - raise an action (onLoadingChanged) whenever the loading state changes

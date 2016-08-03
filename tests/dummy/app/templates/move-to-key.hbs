@@ -1,0 +1,9 @@
+<h3>Move to Key</h3>
+<p>Click on the viewer to begin navigating through the area. To go back to the start, click the <strong>Reset</strong> button below.</p>
+<div class="mly-wrapper">
+  {{!-- NOTE: clientId is defined in config/environment.js --}}
+  {{mapillary-viewer clientId=clientId key=startKey moveTo=moveToKey onNodeChanged=(action 'nodeDidChange') }}
+</div>
+<p>
+  <button onclick={{action "resetViewer"}} disabled={{isResetDisabled}}>Reset</button>
+</p>
